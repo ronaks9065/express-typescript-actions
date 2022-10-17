@@ -4,7 +4,7 @@ on:
   workflow_dispatch: {}
 
 env:
-  BUCKET_NAME : "typescript-express-artifact"
+  BUCKET_NAME : "typescript-express-artifact-1"
   AWS_REGION : "ap-south-1"
   GITHUB_REF: "main"
 
@@ -22,7 +22,7 @@ jobs:
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          role-to-assume: arn:aws:iam::464615698121:role/gitHub-actions-role
+          role-to-assume: arn:aws:iam::512771275801:role/Github-Actions-Role
           role-session-name: GitHub-Action-Role
           aws-region: ${{ env.AWS_REGION }}
 
@@ -68,7 +68,7 @@ jobs:
     - name: Configure AWS credentials from Test account
       uses: aws-actions/configure-aws-credentials@v1
       with:
-        role-to-assume: arn:aws:iam::464615698121:role/gitHub-actions-role
+        role-to-assume: arn:aws:iam::512771275801:role/Github-Actions-Role
         aws-region: ${{ env.AWS_REGION }}
     - run: |
-        aws deploy create-deployment --application-name node-express-app --deployment-group-name node-deployment --s3-location bucket=typescript-express-artifact,key=main/latest/project.zip,bundleType=zip
+        aws deploy create-deployment --application-name node-express-app --deployment-group-name node-deployment --s3-location bucket=typescript-express-artifact-1,key=main/latest/project.zip,bundleType=zip
