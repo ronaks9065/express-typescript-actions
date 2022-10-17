@@ -69,6 +69,6 @@ jobs:
       uses: aws-actions/configure-aws-credentials@v1
       with:
         role-to-assume: arn:aws:iam::512771275801:role/Github-Actions-Role
-        aws-region: ${{ env.AWS_REGION }}
+        aws-region: ap-south-1
     - run: |
-        aws deploy create-deployment --application-name node-express-app --deployment-group-name node-deployment --s3-location bucket=typescript-express-artifact-1,key=main/latest/project.zip,bundleType=zip
+        aws deploy create-deployment --application-name node-app --deployment-group-name ec2-app --s3-location bucket=typescript-express-artifact-1,key=main/latest/project.zip,bundleType=zip
