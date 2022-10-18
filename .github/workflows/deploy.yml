@@ -4,7 +4,7 @@ on:
   workflow_dispatch: {}
 
 env:
-  BUCKET_NAME : "typescript-express-artifact-1"
+  BUCKET_NAME : "typescript-express-artifact-3"
   AWS_REGION : "ap-south-1"
   GITHUB_REF: "main"
 
@@ -39,9 +39,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '16.x'
-      - run: npm ci
-      - run: npm run build
-      - run: npm run lint
+      - run: sudo npm ci
+      - run: sudo npm run build
+      - run: sudo npm run lint
 
       - name: Make Artifact directory
         run: mkdir -p ./artifacts
@@ -71,4 +71,4 @@ jobs:
         role-to-assume: arn:aws:iam::512771275801:role/Github-Actions-Role
         aws-region: ap-south-1
     - run: |
-        aws deploy create-deployment --application-name node-app --deployment-group-name ec2-app --s3-location bucket=typescript-express-artifact-1,key=main/latest/project.zip,bundleType=zip
+        aws deploy create-deployment --application-name node-app --deployment-group-name ec2-app --s3-location bucket=typescript-express-artifact-3,key=codedeploy-3/project.zip,bundleType=zip
