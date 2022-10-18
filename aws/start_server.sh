@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo npm install --prefix /home/ubuntu/Code/express-typescript-actions
-cd /home/ubuntu/Code/express-typescript-actions
-npm run build
+sudo npm install --prefix /home/ubuntu/code/codedeploy-3
+cd /home/ubuntu/code/codedeploy-3
+sudo npm run build
 sudo systemctl start node-api.service
