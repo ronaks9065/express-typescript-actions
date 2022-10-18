@@ -72,3 +72,4 @@ jobs:
         aws-region: ap-south-1
     - run: |
         aws deploy create-deployment --application-name node-app --deployment-group-name ec2-app --s3-location bucket=typescript-express-artifact-3,key=codedeploy-3/project.zip/project.zip,bundleType=zip
+        sudo npm run 
