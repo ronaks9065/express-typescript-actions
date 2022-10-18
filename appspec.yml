@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ubuntu/Code/express-typescript-actions
+    destination: /home/ubuntu/code/codedeploy-3
 hooks:
   BeforeInstall:
     - location: aws/stop_server.sh
